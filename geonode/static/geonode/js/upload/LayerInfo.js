@@ -560,7 +560,7 @@ define(function (require, exports) {
              async: true,
              type: "POST",
              data: form_data,
-             timeout: 15000,
+             timeout: 30000,
              processData: false,
              contentType: false,
              xhr: function() {

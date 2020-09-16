@@ -462,6 +462,9 @@ def layer_from_viewer_config(map_id, model, layer, source, ordering, save_map=Tr
         layer_params=json.dumps(layer_cfg),
         source_params=json.dumps(source_cfg)
     )
+    # to fix the bug when the layername is chinese
+    if _model.name:
+        _model.name = _model.name.encode('utf-8')
     if map_id and save_map:
         _model.save()
 
